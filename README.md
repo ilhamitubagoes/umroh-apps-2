@@ -12,3 +12,5 @@ memudahkan build aplikasi hybrid menjadi aplikasi mobile
 Build ke bentuk aplikasi android yang membutuhkan sdk android manager, disesuaikan dengan API android sesuaikan dengan device user
 
 Template7 memudahkan manipulasi operasi data yang iteratif, seperti fetching data file 'json'
+
+Kekurangan : - (masih ditunggu)
