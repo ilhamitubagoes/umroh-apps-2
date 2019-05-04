@@ -17,9 +17,19 @@ var routes = [
     name: 'materi-panduan',
   },
   {
+    path: '/list-video/',
+    componentUrl: './pages/list-video.html',
+    name: 'list-video',
+  },
+  {
     path: '/detil-doa/',
     url: './pages/doa.html',
     name: 'detil-doa',
+  },
+  {
+    path: '/tempat-ziarah/',
+    url: './pages/list-ziarah.html',
+    name: 'tempat-ziarah',
   },
   // Right Panel pages
   {

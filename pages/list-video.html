@@ -1,0 +1,219 @@
+<template>
+<div class="page" data-name="list-video">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title">List Video</div>
+      <div class="right">
+        <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-demo">
+          <i class="icon f7-icons ios-only">search_strong</i>
+          <i class="icon material-icons md-only">search</i>
+        </a>
+      </div>
+      <form data-search-container=".searchbar-list" data-search-in=".a" class="searchbar searchbar-expandable searchbar-demo searchbar-init">
+        <div class="searchbar-inner">
+          <div class="searchbar-input-wrap">
+            <input type="search" placeholder="Cari video"/>
+            <i class="searchbar-icon"></i><span class="input-clear-button"></span>
+          </div>
+          <span class="searchbar-disable-button">Cancel</span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="list components-list media-list searchbar-found">
+      <ul>
+        <li>
+          <a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/10" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Tata Cara Umroh Praktis</div>
+              </div>
+              <div class="item-subtitle">Yufid.Tv</div>
+            </div>
+          </a>
+        </li>
+        <li><a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/7" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Memakai Ihram bagi Laki-laki</div>
+              </div>
+              <div class="item-subtitle">Haj Mobility</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/3" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Memakai Ihram bagi Perempuan</div>
+              </div>
+              <div class="item-subtitle">Bimbingan Manasik Haji</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/4" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Tata Cara Thawaf</div>
+              </div>
+              <div class="item-subtitle">Iman Sejuk</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/5" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Sa'i dari Shafa ke Marwah</div>
+              </div>
+              <div class="item-subtitle">Ustadz Zainuddin</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/5" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Larangan Ibadah Umrah</div>
+              </div>
+              <div class="item-subtitle">Viva.co.id</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="item-link item-content" @click="openPopupDark">
+            <div class="item-media"><img src="http://lorempixel.com/192/108/cats/5" width="192" class="lazy lazy-fade-in demo-lazy" /></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Miqat Ibadah Umrah</div>
+              </div>
+              <div class="item-subtitle">Salam Tv</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</template>
+<script>
+  return {
+    data: function () {
+      return {
+        photos: [
+          {
+            html: '<iframe src="https://www.youtube.com/embed/XJBibv9_FBI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Tata Cara Umroh Praktis'
+          },
+          {
+            html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/KF3rtSbnawg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Memakai Ihram bagi Laki-laki'
+          },
+          {
+            html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/9XE8KP4vBnQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Memakai Ihram bagi Perempuan'
+          },
+          {
+            html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3bkT9kHe-Ec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Cara Thawaf'
+          },
+          {
+            html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/eKNtPeROt48" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Sai dari Shafa ke Marwah'
+          },
+          {
+            html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/vfI0UCUAqb8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Larangan dalam ibadah Umroh'
+          },
+          {
+            html: '<iframe width="560" height="315" src="https://www.youtube.com/embed/upytBcmjx0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            caption: 'Miqat Ibadah Umroh'
+          }
+        ],
+      }
+    },
+    methods: {
+      openStandalone: function () {
+        const self = this;
+        self.standalone.open();
+      },
+      openPopup: function () {
+        const self = this;
+        self.popup.open();
+      },
+      openPage: function () {
+        const self = this;
+        self.page.open();
+      },
+      openStandaloneDark: function () {
+        const self = this;
+        self.standaloneDark.open();
+      },
+      openPopupDark: function () {
+        const self = this;
+        self.popupDark.open();
+      },
+      openPageDark: function () {
+        const self = this;
+        self.pageDark.open();
+      },
+    },
+    on: {
+      pageInit: function () {
+        const self = this;
+        // Create PBs when page init
+        self.standalone = self.$app.photoBrowser.create({
+          photos: self.photos,
+        });
+        self.popup = self.$app.photoBrowser.create({
+          photos: self.photos,
+          type: 'popup',
+        });
+        self.page = self.$app.photoBrowser.create({
+          photos: self.photos,
+          type: 'page',
+          backLinkText: 'Back',
+        });
+        self.standaloneDark = self.$app.photoBrowser.create({
+          photos: self.photos,
+          theme: 'dark',
+        });
+        self.popupDark = self.$app.photoBrowser.create({
+          photos: self.photos,
+          type: 'popup',
+          theme: 'dark',
+        });
+        self.pageDark = self.$app.photoBrowser.create({
+          photos: self.photos,
+          type: 'page',
+          backLinkText: 'Back',
+          theme: 'dark',
+        });
+      },
+      pageBeforeRemove: function () {
+        const self = this;
+        // Destroy PBs on page remove
+        self.standalone.destroy();
+        self.popup.destroy();
+        self.page.destroy();
+        self.standaloneDark.destroy();
+        self.popupDark.destroy();
+        self.pageDark.destroy();
+      },
+    }
+  };
+</script>
