@@ -14,3 +14,18 @@ Build ke bentuk aplikasi android yang membutuhkan sdk android manager, disesuaik
 Template7 memudahkan manipulasi operasi data yang iteratif, seperti fetching data file 'json'
 
 Kekurangan : - (masih ditunggu)
+
+Untuk membuat aplikasi android atau biasa disebut dengan apk.
+Maka bisa menggunakan dengan apache cordova
+Sebelumnya harus menginstall cordova secara globally :
+>npm install -g cordova
+setelah berhasil diinstall maka selanjutnya adalah :
+>cordova create umrah com.panduan.umrah Umrah-Apps
+>cd umrah
+>cordova platform add android
+>cordova build android
+
+Hapus semua file yang ada di folder umrah
+kemudian pindahkan proyek aplikasi yang telah dibangun sebelumnya
+ke folder proyek aplikasi cordova yang telah dibuat
+tinggal di drag and drop lalu selesai
