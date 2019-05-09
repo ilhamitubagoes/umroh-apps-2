@@ -31,6 +31,11 @@ var routes = [
     url: './pages/list-ziarah.html',
     name: 'tempat-ziarah',
   },
+  {
+    path: '/feedback/',
+    url: './pages/feedback.html',
+    name: 'feedback',
+  },
   // Right Panel pages
   {
     path: '/panel-right-1/',
