@@ -65,7 +65,7 @@ class Actions extends Modal {
       const buttonEl = this;
       let buttonIndex;
       let groupIndex;
-      if ($(buttonEl).hasClass('list-button')) {
+      if ($(buttonEl).hasClass('item-link')) {
         buttonIndex = $(buttonEl).parents('li').index();
         groupIndex = $(buttonEl).parents('.list').index();
       } else {
@@ -104,12 +104,12 @@ class Actions extends Modal {
         });
         popover.open(animate);
         popover.once('popoverOpened', () => {
-          popover.$el.find('.list-button').each((groupIndex, buttonEl) => {
+          popover.$el.find('.item-link').each((groupIndex, buttonEl) => {
             $(buttonEl).on('click', buttonOnClick);
           });
         });
         popover.once('popoverClosed', () => {
-          popover.$el.find('.list-button').each((groupIndex, buttonEl) => {
+          popover.$el.find('.item-link').each((groupIndex, buttonEl) => {
             $(buttonEl).off('click', buttonOnClick);
           });
           Utils.nextTick(() => {
@@ -238,8 +238,9 @@ class Actions extends Modal {
                     itemClasses.push('popover-from-actions-label');
                     return `<li class="${itemClasses.join(' ')}">${text}</li>`;
                   }
+                  itemClasses.push('item-link');
                   if (icon) {
-                    itemClasses.push('item-link item-content');
+                    itemClasses.push('item-content');
                     return `
                       <li>
                         <a class="${itemClasses.join(' ')}">
@@ -258,7 +259,7 @@ class Actions extends Modal {
                   itemClasses.push('list-button');
                   return `
                     <li>
-                      <a href="#" class="${itemClasses.join(' ')}">${text}</a>
+                      <a href="#" class="list-button ${itemClasses.join(' ')}">${text}</a>
                     </li>
                   `;
                 }).join('')}

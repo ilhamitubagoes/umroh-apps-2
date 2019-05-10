@@ -58,11 +58,11 @@ export default {
           if (typeof args[1] === 'function') {
             [text, callbackOk, callbackCancel, defaultValue, title] = args;
           }
-          defaultValue = typeof defaultValue === 'undefined' || defaultValue === null ? '' : defaultValue;
+          defaultValue = typeof defaultValue === 'undefined' ? '' : defaultValue;
           return new Dialog(app, {
             title: typeof title === 'undefined' ? defaultDialogTitle() : title,
             text,
-            content: `<div class="dialog-input-field input"><input type="text" class="dialog-input" value="${defaultValue}"></div>`,
+            content: `<div class="dialog-input-field item-input"><div class="item-input-wrap"><input type="text" value="${defaultValue}" class="dialog-input"></div></div>`,
             buttons: [
               {
                 text: app.params.dialog.buttonCancel,
@@ -115,11 +115,15 @@ export default {
             title: typeof title === 'undefined' ? defaultDialogTitle() : title,
             text,
             content: `
-              <div class="dialog-input-field dialog-input-double input">
-                <input type="text" name="dialog-username" placeholder="${app.params.dialog.usernamePlaceholder}" class="dialog-input">
+              <div class="dialog-input-field dialog-input-double item-input">
+                <div class="item-input-wrap">
+                  <input type="text" name="dialog-username" placeholder="${app.params.dialog.usernamePlaceholder}" class="dialog-input">
+                </div>
               </div>
-              <div class="dialog-input-field dialog-input-double input">
-                <input type="password" name="dialog-password" placeholder="${app.params.dialog.passwordPlaceholder}" class="dialog-input">
+              <div class="dialog-input-field dialog-input-double item-input">
+                <div class="item-input-wrap">
+                  <input type="password" name="dialog-password" placeholder="${app.params.dialog.passwordPlaceholder}" class="dialog-input">
+                </div>
               </div>`,
             buttons: [
               {
@@ -150,8 +154,10 @@ export default {
             title: typeof title === 'undefined' ? defaultDialogTitle() : title,
             text,
             content: `
-              <div class="dialog-input-field input">
-                <input type="password" name="dialog-password" placeholder="${app.params.dialog.passwordPlaceholder}" class="dialog-input">
+              <div class="dialog-input-field item-input">
+                <div class="item-input-wrap">
+                  <input type="password" name="dialog-password" placeholder="${app.params.dialog.passwordPlaceholder}" class="dialog-input">
+                </div>
               </div>`,
             buttons: [
               {
@@ -173,7 +179,7 @@ export default {
           }).open();
         },
         preloader(title, color) {
-          const preloaderInner = Utils[`${app.theme}PreloaderContent`] || '';
+          const preloaderInner = app.theme !== 'md' ? '' : Utils.mdPreloaderContent;
           return new Dialog(app, {
             title: typeof title === 'undefined' || title === null ? app.params.dialog.preloaderTitle : title,
             content: `<div class="preloader${color ? ` color-${color}` : ''}">${preloaderInner}</div>`,

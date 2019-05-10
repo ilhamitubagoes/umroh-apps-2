@@ -1,5 +1,15 @@
 .ios {
+  @import (multiple) '../../less/colors-ios.less';
+  @import (multiple) '../../less/vars-ios.less';
   .statusbar {
-    background: var(--f7-statusbar-bg-color, var(--f7-bars-bg-color));
+    background: #f7f7f8;
+  }
+  // Dark Theme
+  & when (@includeDarkTheme) {
+    .theme-dark {
+      .statusbar {
+        background-color: @barsBgDark;
+      }
+    }
   }
 }

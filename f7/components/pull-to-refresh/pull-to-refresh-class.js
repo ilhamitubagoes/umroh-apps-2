@@ -15,8 +15,6 @@ class PullToRefresh extends Framework7Class {
     ptr.el = $el[0];
     ptr.app = app;
 
-    ptr.bottom = ptr.$el.hasClass('ptr-bottom');
-
     // Extend defaults with modules params
     ptr.useModulesParams({});
 
@@ -51,7 +49,6 @@ class PullToRefresh extends Framework7Class {
     let touchesDiff;
     let refresh = false;
     let useTranslate = false;
-    let forceUseTranslate = false;
     let startTranslate = 0;
     let translate;
     let scrollTop;
@@ -60,14 +57,11 @@ class PullToRefresh extends Framework7Class {
     let dynamicTriggerDistance;
     let pullStarted;
     let hasNavbar = false;
-    let scrollHeight;
-    let offsetHeight;
-    let maxScrollTop;
     const $pageEl = $el.parents('.page');
 
     if ($pageEl.find('.navbar').length > 0 || $pageEl.parents('.view').children('.navbar').length > 0) hasNavbar = true;
     if ($pageEl.hasClass('no-navbar')) hasNavbar = false;
-    if (!hasNavbar && !ptr.bottom) $el.addClass('ptr-no-navbar');
+    if (!hasNavbar) $el.addClass('ptr-no-navbar');
 
     // Define trigger distance
     if ($el.attr('data-ptr-distance')) {
@@ -86,7 +80,7 @@ class PullToRefresh extends Framework7Class {
       if ($el.hasClass('ptr-refreshing')) {
         return;
       }
-      if ($(e.target).closest('.sortable-handler, .ptr-ignore, .card-expandable.card-opened').length) return;
+      if ($(e.target).closest('.sortable-handler').length) return;
 
       isMoved = false;
       pullStarted = false;
@@ -130,16 +124,12 @@ class PullToRefresh extends Framework7Class {
       }
 
       scrollTop = $el[0].scrollTop;
+      if (typeof wasScrolled === 'undefined' && scrollTop !== 0) wasScrolled = true;
 
       if (!isMoved) {
         $el.removeClass('ptr-transitioning');
         let targetIsScrollable;
-        scrollHeight = $el[0].scrollHeight;
-        offsetHeight = $el[0].offsetHeight;
-        if (ptr.bottom) {
-          maxScrollTop = scrollHeight - offsetHeight;
-        }
-        if (scrollTop > scrollHeight) {
+        if (scrollTop > $el[0].offsetHeight) {
           isTouched = false;
           return;
         }
@@ -150,10 +140,7 @@ class PullToRefresh extends Framework7Class {
             if (
               (ptrScrollableEl.scrollHeight > ptrScrollableEl.offsetHeight)
               && $(ptrScrollableEl).css('overflow') === 'auto'
-              && (
-                (!ptr.bottom && ptrScrollableEl.scrollTop > 0)
-                || (ptr.bottom && ptrScrollableEl.scrollTop < ptrScrollableEl.scrollHeight - ptrScrollableEl.offsetHeight)
-              )
+              && ptrScrollableEl.scrollTop > 0
             ) {
               targetIsScrollable = true;
             }
@@ -165,57 +152,33 @@ class PullToRefresh extends Framework7Class {
         }
         if (dynamicTriggerDistance) {
           triggerDistance = $el.attr('data-ptr-distance');
-          if (triggerDistance.indexOf('%') >= 0) triggerDistance = (scrollHeight * parseInt(triggerDistance, 10)) / 100;
+          if (triggerDistance.indexOf('%') >= 0) triggerDistance = ($el[0].offsetHeight * parseInt(triggerDistance, 10)) / 100;
         }
         startTranslate = $el.hasClass('ptr-refreshing') ? triggerDistance : 0;
-        if (scrollHeight === offsetHeight || Device.os !== 'ios' || isMaterial) {
+        if ($el[0].scrollHeight === $el[0].offsetHeight || Device.os !== 'ios' || isMaterial) {
           useTranslate = true;
         } else {
           useTranslate = false;
         }
-        forceUseTranslate = false;
       }
       isMoved = true;
       touchesDiff = pageY - touchesStart.y;
 
-      if (typeof wasScrolled === 'undefined' && (ptr.bottom ? scrollTop !== maxScrollTop : scrollTop !== 0)) wasScrolled = true;
-
-      const ptrStarted = ptr.bottom
-        ? (touchesDiff < 0 && scrollTop >= maxScrollTop) || scrollTop > maxScrollTop
-        : (touchesDiff > 0 && scrollTop <= 0) || scrollTop < 0;
-
-      if (ptrStarted) {
+      if ((touchesDiff > 0 && scrollTop <= 0) || scrollTop < 0) {
         // iOS 8 fix
-        if (Device.os === 'ios' && parseInt(Device.osVersion.split('.')[0], 10) > 7) {
-          if (!ptr.bottom && scrollTop === 0 && !wasScrolled) useTranslate = true;
-          if (ptr.bottom && scrollTop === maxScrollTop && !wasScrolled) useTranslate = true;
-        }
+        if (Device.os === 'ios' && parseInt(Device.osVersion.split('.')[0], 10) > 7 && scrollTop === 0 && !wasScrolled) useTranslate = true;
 
-        if (!useTranslate && ptr.bottom && !isMaterial) {
-          $el.css('-webkit-overflow-scrolling', 'auto');
-          $el.scrollTop(maxScrollTop);
-          forceUseTranslate = true;
-        }
-
-        if (useTranslate || forceUseTranslate) {
-          if (e.cancelable) {
-            e.preventDefault();
-          }
-          translate = (ptr.bottom ? -1 * (Math.abs(touchesDiff) ** 0.85) : touchesDiff ** 0.85) + startTranslate;
+        if (useTranslate) {
+          e.preventDefault();
+          translate = (touchesDiff ** 0.85) + startTranslate;
           if (isMaterial) {
             $preloaderEl.transform(`translate3d(0,${translate}px,0)`)
-              .find('.ptr-arrow').transform(`rotate(${(180 * (Math.abs(touchesDiff) / 66)) + 100}deg)`);
+              .find('.ptr-arrow').transform(`rotate(${(180 * (touchesDiff / 66)) + 100}deg)`);
           } else {
-            // eslint-disable-next-line
-            if (ptr.bottom) {
-              $el.children().transform(`translate3d(0,${translate}px,0)`);
-            } else {
-              $el.transform(`translate3d(0,${translate}px,0)`);
-            }
+            $el.transform(`translate3d(0,${translate}px,0)`);
           }
         }
-
-        if (((useTranslate || forceUseTranslate) && (Math.abs(touchesDiff) ** 0.85) > triggerDistance) || (!useTranslate && Math.abs(touchesDiff) >= triggerDistance * 2)) {
+        if ((useTranslate && (touchesDiff ** 0.85) > triggerDistance) || (!useTranslate && touchesDiff >= triggerDistance * 2)) {
           refresh = true;
           $el.addClass('ptr-pull-up').removeClass('ptr-pull-down');
         } else {
@@ -268,16 +231,7 @@ class PullToRefresh extends Framework7Class {
         $preloaderEl.transform('')
           .find('.ptr-arrow').transform('');
       } else {
-        // eslint-disable-next-line
-        if (ptr.bottom) {
-          $el.children().transform('');
-        } else {
-          $el.transform('');
-        }
-      }
-
-      if (!useTranslate && ptr.bottom && !isMaterial) {
-        $el.css('-webkit-overflow-scrolling', '');
+        $el.transform('');
       }
 
       if (refresh) {
@@ -303,13 +257,13 @@ class PullToRefresh extends Framework7Class {
     ptr.attachEvents = function attachEvents() {
       const passive = Support.passiveListener ? { passive: true } : false;
       $el.on(app.touchEvents.start, handleTouchStart, passive);
-      app.on('touchmove:active', handleTouchMove);
+      app.on('touchmove', handleTouchMove);
       app.on('touchend:passive', handleTouchEnd);
     };
     ptr.detachEvents = function detachEvents() {
       const passive = Support.passiveListener ? { passive: true } : false;
       $el.off(app.touchEvents.start, handleTouchStart, passive);
-      app.off('touchmove:active', handleTouchMove);
+      app.off('touchmove', handleTouchMove);
       app.off('touchend:passive', handleTouchEnd);
     };
 
