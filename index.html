@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="f7/css/framework7.min.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/app2.css">
+  <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/grid.css">
   <link rel="apple-touch-icon" href="img/logo-umrah.png">
   <link rel="icon" href="img/logo-umrah.png">
 </head>
@@ -122,7 +124,40 @@
 		<div class="tabs">
 		  <div id="tab-1" class="page-content tab">
 		    <div class="block">
-		      
+
+          <div class='row js-startPage'>
+        		<div class='col-5 start'>
+        			<h1>Haji's quiz</h1>
+        			<button class='js-start hover'>Mulai</button>
+        		</div>
+        	</div>
+        	<div class='row hidden' id='question-container'>
+        		<section class='question-container col-8'>
+        			<p class="question">Tujuan dilaksanakan ibadah haji?</p><br>
+        			<button class='button0 js-answer hover' value='0'>Mengunjungi Baitullah di Mekah kerana mengerjakan ibadat tertentu pada masa tertentu dengan syarat tertentu</button><br>
+        			<button class='button1 js-answer hover' value='1'>Mengunjungi Kaabah di Mekah kerana melakukan tawaf kerana Allah</button><br>
+        			<button class='button2 js-answer hover' value='2'>Mengunjungi Baitullah di Mekah kerana melakukan ibadat tertentu pada waktu-waktu tertentu</button><br>
+        			<button class='button3 js-answer hover' value='3'>Mengunjungi Baitullah di Mekah kerana ingin melakukan tawaf, sai dan bercukur</button>
+        		</section>
+        	</div>
+        	<div class='row'>
+        		<div class='continue-container col-8'>
+        			<div class='positionLeft'>
+        				<span class='js-count'>Soal: 1/10</span><br>
+        				<span class='js-score'>Benar: 0/0</span>
+        			</div>
+        			<button class='continue js-continue hidden'>Lanjut</button>
+        		</div>
+        	</div>
+        	<div class='row response-row'>
+        		<div class='col-12'>
+        			<div class='result'>
+        				<span class='response1'></span><br>
+        				<span class='response2 hidden'></span>
+        			</div>
+        		</div>
+        	</div>          
+
 		    </div>
 		  </div>
 		  <div id="tab-2" class="page-content tab tab-active">
@@ -138,7 +173,7 @@
               <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/makah1.jpg"/></div></div>
               <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/siwak.jpg"/></div></div>
 			      </div>
-			  </div>		  		
+			  </div>
 		  	</div>
 		  	<div class="row">
 	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
@@ -157,7 +192,7 @@
 	            </a>
 	          </div>
 	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
-	          	<a class="item-content item-link" href="/tempat-ziarah/">
+	          	<a class="item-content item-link" href="/quiz5/">
 	              <i class="icon material-icons md-only icon-myicon4"></i><br>Quiz Umroh
 	            </a>
 	          </div>
@@ -167,7 +202,7 @@
 		    <div class="block-title">Dipublikasikan oleh Ari - 19 April 2019</div>
 		    <div class="block">
 		    	<p>Aplikasi yang dibuat untuk membantu jamaah yang akan menjalankan ibadah Umrah selama di tanah suci Mekah berisi panduan materi ibadah Umrah. Dalam aplikasi ini anda dapat membaca beberapa tata cara yang disertai juga dengan video untuk mempermudah pemahaman dalam menjalankan ibadah Umrah. Selain itu, anda dapat mengukur sudah sampai sejauh manakah pemahaman mengenai panduan umrah dengan menggunakan Quiz yang tersedia pada aplikasi ini. Disediakan pula dengan fitur arah kiblat untuk kemudahan didalam perjalanan menuju ke Baitullah.</p>
-		    	
+
 		    	<p>Aplikasi ini digunakan prasyarat untuk menyelesaikan perkuliahan pada program studi Pendidikan Teknik Informatika sekaligus untuk mendapatkan predikat sebagai Sarjana Pendidikan.</p>
 		    </div>
 			<div>
@@ -189,9 +224,12 @@
       </div>
     </div>
   </div>
+  <script src="quiz.js"></script>
   <script src="js/gauge.min.js"></script>
   <script src="f7/js/framework7.min.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/kuis.js"></script>
 </body>
 </html>

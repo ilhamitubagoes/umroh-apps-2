@@ -27,6 +27,26 @@ var routes = [
     name: 'detil-doa',
   },
   {
+    path: '/quiz1/',
+    url: './pages/quiz1.html',
+    name: 'quiz1',
+  },
+  {
+    path: '/quiz2/',
+    url: './pages/quiz2.html',
+    name: 'quiz2',
+  },
+  {
+    path: '/quiz3/',
+    url: './pages/quiz3.html',
+    name: 'quiz3',
+  },
+  {
+    path: '/quiz5/',
+    url: './pages/quiz5.html',
+    name: 'quiz5',
+  },
+  {
     path: '/tempat-ziarah/',
     url: './pages/list-ziarah.html',
     name: 'tempat-ziarah',
