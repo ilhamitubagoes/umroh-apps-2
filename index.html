@@ -19,66 +19,10 @@
 <body>
   <div id="app">
     <div class="statusbar"></div>
-    <!-- <div class="panel panel-left panel-cover">
-      <div class="page">
-        <div class="page-content">
-          <div class="block-title">Panel Kiri</div>
-          <div class="block">
-            <p>This is a left side panel. You can close it by clicking outsite or on this link: <a href="#" class="panel-close">close me</a>. You can put here anything, even another isolated view like in <a href="#" data-panel="right" class="panel-open">Right Panel</a></p>
-          </div>
-          <div class="block-title">Main Menu</div>
-          <div class="list links-list">
-            <ul>
-              <li>
-                <a href="/" class="panel-close">Beranda</a>
-              </li>
-              <li>
-                <a href="/materi-panduan/" class="panel-close">Panduan</a>
-              </li>
-              <li>
-                <a href="/list-video/" class="panel-close">Video</a>
-              </li>
-              <li>
-                <a href="/tempat-ziarah/" class="panel-close">Tempat Ziarah</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-right panel-reveal">
-      <div class="view view-init view-right" name="right" data-url="/">
-        <div class="page">
-          <div class="navbar">
-            <div class="navbar-inner sliding">
-              <div class="title">Right Panel</div>
-            </div>
-          </div>
-          <div class="page-content">
-            <div class="block">
-              <p>This is a right side panel. You can close it by clicking outsite or on this link: <a href="#" class="panel-close">close me</a>. You can put here anything, even another isolated view.</p>
-            </div>
-            <div class="block-title">Panel Navigation</div>
-            <div class="list links-list">
-              <ul>
-                <li><a href="/panel-right-1/">Right panel page 1</a></li>
-                <li><a href="/panel-right-2/">Right panel page 2</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
       <div class="page">
         <div class="navbar">
           <div class="navbar-inner">
-            <div class="left">
-              <a href="#" class="link icon-only panel-open" data-panel="left">
-                <i class="icon f7-icons ios-only">menu</i>
-                <i class="icon material-icons md-only">menu</i>
-              </a>
-            </div>
             <div class="title sliding">Panduan Umroh</div>
             <div class="right">
               <!-- <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
@@ -107,7 +51,7 @@
           	<a href="#tab-1" class="tab-link">
           	  <i class="icon f7-icons ios-only">compass</i>
           	  <i class="icon material-icons md-only">near_me</i>
-          	  <span class="tabbar-label">Kiblat</span>
+          	  <span class="tabbar-label">Quiz</span>
           	</a>
           	<a href="#tab-2" class="tab-link tab-link-active">
           	  <i class="icon f7-icons ios-only">home</i>
@@ -126,29 +70,32 @@
 		    <div class="block">
 
           <div class='row js-startPage'>
-        		<div class='col-5 start'>
-        			<h1>Haji's quiz</h1>
-        			<button class='js-start hover'>Mulai</button>
+        		<div class='col-6 start'>
+              <div class="block">Kuis Umroh dan Haji</div>
+        			<button class='button button-raised js-start hover'>Mulai</button>
         		</div>
         	</div>
+
         	<div class='row hidden' id='question-container'>
         		<section class='question-container col-8'>
         			<p class="question">Tujuan dilaksanakan ibadah haji?</p><br>
-        			<button class='button0 js-answer hover' value='0'>Mengunjungi Baitullah di Mekah kerana mengerjakan ibadat tertentu pada masa tertentu dengan syarat tertentu</button><br>
-        			<button class='button1 js-answer hover' value='1'>Mengunjungi Kaabah di Mekah kerana melakukan tawaf kerana Allah</button><br>
-        			<button class='button2 js-answer hover' value='2'>Mengunjungi Baitullah di Mekah kerana melakukan ibadat tertentu pada waktu-waktu tertentu</button><br>
-        			<button class='button3 js-answer hover' value='3'>Mengunjungi Baitullah di Mekah kerana ingin melakukan tawaf, sai dan bercukur</button>
+        			<button class='button button-raised button0 js-answer hover item-input-wrap' value='0'>Mengunjungi Baitullah di Mekah kerana mengerjakan ibadat tertentu pada masa tertentu dengan syarat tertentu</button><br>
+        			<button class='button button-raised button1 js-answer hover item-input-wrap' value='1'>Mengunjungi Kaabah di Mekah kerana melakukan tawaf kerana Allah</button><br>
+        			<button class='button button-raised button2 js-answer hover item-input-wrap' value='2'>Mengunjungi Baitullah di Mekah kerana melakukan ibadat tertentu pada waktu-waktu tertentu</button><br>
+        			<button class='button button-raised button3 js-answer hover item-input-wrap' value='3'>Mengunjungi Baitullah di Mekah kerana ingin melakukan tawaf, sai dan bercukur</button>
         		</section>
         	</div>
+
         	<div class='row'>
         		<div class='continue-container col-8'>
         			<div class='positionLeft'>
         				<span class='js-count'>Soal: 1/10</span><br>
         				<span class='js-score'>Benar: 0/0</span>
         			</div>
-        			<button class='continue js-continue hidden'>Lanjut</button>
+        			<button class='button button-raised continue js-continue hidden'>Lanjut</button>
         		</div>
         	</div>
+
         	<div class='row response-row'>
         		<div class='col-12'>
         			<div class='result'>
@@ -156,7 +103,7 @@
         				<span class='response2 hidden'></span>
         			</div>
         		</div>
-        	</div>          
+        	</div>
 
 		    </div>
 		  </div>
@@ -192,7 +139,7 @@
 	            </a>
 	          </div>
 	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
-	          	<a class="item-content item-link" href="/quiz5/">
+	          	<a class="item-content item-link" href="/tab-1/">
 	              <i class="icon material-icons md-only icon-myicon4"></i><br>Quiz Umroh
 	            </a>
 	          </div>
@@ -204,6 +151,7 @@
 		    	<p>Aplikasi yang dibuat untuk membantu jamaah yang akan menjalankan ibadah Umrah selama di tanah suci Mekah berisi panduan materi ibadah Umrah. Dalam aplikasi ini anda dapat membaca beberapa tata cara yang disertai juga dengan video untuk mempermudah pemahaman dalam menjalankan ibadah Umrah. Selain itu, anda dapat mengukur sudah sampai sejauh manakah pemahaman mengenai panduan umrah dengan menggunakan Quiz yang tersedia pada aplikasi ini. Disediakan pula dengan fitur arah kiblat untuk kemudahan didalam perjalanan menuju ke Baitullah.</p>
 
 		    	<p>Aplikasi ini digunakan prasyarat untuk menyelesaikan perkuliahan pada program studi Pendidikan Teknik Informatika sekaligus untuk mendapatkan predikat sebagai Sarjana Pendidikan.</p>
+		    	<p>Tugas Akhir Skripsi - Barron Elfarisi 2019.</p>
 		    </div>
 			<div>
 			</div>
