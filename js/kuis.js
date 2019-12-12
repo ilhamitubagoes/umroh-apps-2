@@ -119,10 +119,13 @@ function clickContinue(state) {
 
   //kuis berakhir dan menampilkan pesan serta membuang jumlah pertanyaan serta nilai dari halaman bawah
   if (state.currentQuestion > 9) {
-    $('body').append('<div class="end">Anda telah selesai!</div><p class ="endScore">Skor anda ' + state.userScore + " dari " + state.currentQuestion);
-    $('body').append('<a href="index.html" class="balik">Kembali</a>');
-    $('.js-count').remove();
-    $('.js-score').remove();
+    // $('.js-startPage').addClass();
+    $('#tab-1').append("<div class='row' id='question-container'> <section class = 'question-container col-8'>" + 
+                        '<div class="end">Anda telah selesai!</div> <p class ="endScore">Skor anda ' + 
+                          state.userScore + " dari " + state.currentQuestion + "<p>");
+    $('#tab-1').append('<a class="balik button button-raised" href="/materi-panduan/">Ke Materi Panduan</a>' + "</section> </div>");
+    $('.js-count').remove(); //hapus class js-count
+    $('.js-score').remove(); //hapus class js-score
 
   } else {
     //if quiz is not done insert new question and answers and update user score and question count
