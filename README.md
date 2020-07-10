@@ -25,6 +25,18 @@ setelah berhasil diinstall maka selanjutnya adalah :
 >cordova platform add android
 >cordova build android
 
+Bisa juga dengan HTML5APKBUILDER
+Download disini https://bitbucket.org/mrchay/html5apkbuilder/src/default/
+Lalu install java jika belum ada pada laptopmu
+Taruh file hasil download umroh ini ke folder html5 pada html5apkbuilder
+Klik go.bat pada html5apkbuilder untuk memulai
+Ada 3 Aplikasi yang telah selesai dibuild ke apk
+
+Mengganti title apk:
+-
+Mengganti icon apk:
+-
+
 Hapus semua file yang ada di folder umrah
 kemudian pindahkan proyek aplikasi yang telah dibangun sebelumnya
 ke folder proyek aplikasi cordova yang telah dibuat
