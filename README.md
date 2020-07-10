@@ -37,6 +37,8 @@ Mengganti title apk:
 Mengganti icon apk:
 -
 
+Sumber lainnya : https://appsbuilders.org/guides/cara-build-apk-aplikasi-android-menggunakan-html5/
+
 Hapus semua file yang ada di folder umrah
 kemudian pindahkan proyek aplikasi yang telah dibangun sebelumnya
 ke folder proyek aplikasi cordova yang telah dibuat
