@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>Panduan Umroh</title>
+  <link rel="stylesheet" href="f7/css/framework7.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/app2.css">
+  <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/grid.css">
+  <link rel="apple-touch-icon" href="img/logo-umrah.png">
+  <link rel="icon" href="img/logo-umrah.png">
+</head>
+<body>
+  <div id="app">
+    <div class="statusbar"></div>
+    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title sliding">Panduan Umroh</div>
+            <div class="right">
+              <!-- <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+                <i class="icon f7-icons ios-only">search</i>
+                <i class="icon material-icons md-only">search</i>
+              </a> -->
+              <a class="link icon-only popover-open" data-popover=".popover-menu">
+                <i class="icon f7-icons ios-only">more_vertical_fill</i>
+                <i class="icon material-icons md-only">more_vert</i>
+              </a>
+            </div>
+            <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+              <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                  <input type="search" placeholder="Cari"/>
+                  <i class="searchbar-icon"></i>
+                  <span class="input-clear-button"></span>
+                </div>
+                <span class="searchbar-disable-button">Cancel</span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="toolbar toolbar-bottom toolbar-bottom-md tabs-bottom tabbar tabbar-labels">
+          <div class="toolbar-inner">
+          	<a href="#tab-1" class="tab-link">
+          	  <i class="icon f7-icons ios-only">compass</i>
+          	  <i class="icon material-icons md-only">near_me</i>
+          	  <span class="tabbar-label">Quiz</span>
+          	</a>
+          	<a href="#tab-2" class="tab-link tab-link-active">
+          	  <i class="icon f7-icons ios-only">home</i>
+          	  <i class="icon material-icons md-only">home</i>
+          	  <span class="tabbar-label">Beranda</span>
+          	</a>
+          	<a href="#tab-3" class="tab-link">
+          	  <i class="icon f7-icons ios-only">info</i>
+          	  <i class="icon material-icons md-only">info</i>
+          	  <span class="tabbar-label">Info</span>
+          	</a>
+          </div>
+        </div>
+		<div class="tabs">
+		  <div id="tab-1" class="page-content tab">
+		    <div class="block">
+
+          <div class='row js-startPage'>
+        		<div class='col-6 start'>
+              <div class="block">Kuis Seputar Umroh</div>
+        			<button class='button button-raised js-start hover'>Mulai</button>
+        		</div>
+        	</div>
+
+        	<div class='row hidden' id='question-container'>
+        		<section class='question-container col-8'>
+        			<p class="question">Tujuan dilaksanakan ibadah haji?</p><br>
+        			<button class='button button-raised button0 js-answer hover item-input-wrap' value='0'>Mengunjungi Baitullah di Mekah kerana mengerjakan ibadat tertentu pada masa tertentu dengan syarat tertentu</button><br>
+        			<button class='button button-raised button1 js-answer hover item-input-wrap' value='1'>Mengunjungi Kaabah di Mekah kerana melakukan tawaf kerana Allah</button><br>
+        			<button class='button button-raised button2 js-answer hover item-input-wrap' value='2'>Mengunjungi Baitullah di Mekah kerana melakukan ibadat tertentu pada waktu-waktu tertentu</button><br>
+        			<button class='button button-raised button3 js-answer hover item-input-wrap' value='3'>Mengunjungi Baitullah di Mekah kerana ingin melakukan tawaf, sai dan bercukur</button>
+        		</section>
+        	</div>
+
+        	<div class='row'>
+        		<div class='continue-container col-8'>
+        			<div class='positionLeft'>
+        				<span class='js-count'>Soal: 1/10</span><br>
+        				<span class='js-score'>Benar: 0/0</span>
+        			</div>
+        			<button class='button button-raised continue js-continue hidden'>Lanjut</button>
+        		</div>
+        	</div>
+
+        	<div class='row response-row'>
+        		<div class='col-12'>
+        			<div class='result'>
+        				<span class='response1'></span><br>
+        				<span class='response2 hidden'></span>
+        			</div>
+        		</div>
+        	</div>
+
+		    </div>
+		  </div>
+		  <div id="tab-2" class="page-content tab tab-active">
+		  	<div class="tablet-50 slide_gambar" style="height: 50%;">
+			  <div data-pagination='{"el": ".swiper-pagination", "hideOnClick": true}' class="swiper-container swiper-init demo-swiper">
+			  	<div class="swiper-pagination"></div>
+			      <div class="swiper-wrapper">
+              <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/makah3.jpg"/></div></div>
+			      	<div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/masjidil-haram.jpg"/></div></div>
+			      	<div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/masjid-nabawi.jpg"/></div></div>
+              <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/minum.jpg"/></div></div>
+              <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/jamaah.jpg"/></div></div>
+              <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/makah1.jpg"/></div></div>
+              <div class="swiper-slide"><div class="swiper-zoom-container"><img src="img/siwak.jpg"/></div></div>
+			      </div>
+			  </div>
+		  	</div>
+		  	<div class="row">
+	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
+	          	<a class="item-content item-link" href="/materi-panduan/">
+	          	  <i class="icon material-icons md-only icon-myicon"></i><br>Panduan
+	            </a>
+	          </div>
+	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
+	            <a class="item-content item-link" href="/list-video/">
+	              <i class="icon material-icons md-only icon-myicon2"></i><br>Video
+	            </a>
+	          </div>
+	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
+	          	<a class="item-content item-link" href="/detil-doa/">
+	              <i class="icon material-icons md-only icon-myicon3"></i><br>Doa
+	            </a>
+	          </div>
+	          <div class="col-50 tablet-25" style="text-align:center; margin-top: 30px">
+	          	<a class="item-content item-link" href="/tempat-ziarah/">
+	              <i class="icon material-icons md-only icon-myicon4"></i><br>Ziarah
+	            </a>
+	          </div>
+	        </div>
+		  </div>
+		  <div id="tab-3" class="page-content tab">
+		    <div class="block-title">Dipublikasikan oleh Ari - 19 April 2019</div>
+		    <div class="block">
+		    	<p>Aplikasi yang dibuat untuk membantu jamaah yang akan menjalankan ibadah Umrah selama di tanah suci Mekah berisi panduan materi ibadah Umrah. Dalam aplikasi ini anda dapat membaca beberapa tata cara yang disertai juga dengan video untuk mempermudah pemahaman dalam menjalankan ibadah Umrah. Selain itu, anda dapat mengukur sudah sampai sejauh manakah pemahaman mengenai panduan umrah dengan menggunakan Quiz yang tersedia pada aplikasi ini. Disediakan pula dengan fitur arah kiblat untuk kemudahan didalam perjalanan menuju ke Baitullah.</p>
+
+		    	<p>Aplikasi ini digunakan prasyarat untuk menyelesaikan perkuliahan pada program studi Pendidikan Teknik Informatika sekaligus untuk mendapatkan predikat sebagai Sarjana Pendidikan.</p>
+		    	<p>Tugas Akhir Skripsi - Barron Brillyan El'faiz 2019.</p>
+		    </div>
+			<div>
+			</div>
+		  </div>
+		</div>
+		<div class="popover popover-menu">
+	      <div class="popover-angle"></div>
+	      <div class="popover-inner">
+	        <div class="list">
+	          <ul>
+              <li><a href="/tempat-ziarah/" class="list-button popover-close">Wisata Religi</a></li>
+              <li><a href="/feedback/" class="list-button popover-close">Feedback</a></li>
+	            <!-- <li><a href="#" class="list-button popover-close">Credits</a></li> -->
+	          </ul>
+	      	</div>
+	      </div>
+	  	</div>
+      </div>
+    </div>
+  </div>
+  <script src="quiz.js"></script>
+  <script src="js/gauge.min.js"></script>
+  <script src="f7/js/framework7.min.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/kuis.js"></script>
+</body>
+</html>
