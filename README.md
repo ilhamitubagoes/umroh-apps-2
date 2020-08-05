@@ -32,6 +32,11 @@ Taruh file hasil download umroh ini ke folder html5 pada html5apkbuilder
 Klik go.bat pada html5apkbuilder untuk memulai
 Ada 3 Aplikasi yang telah selesai dibuild ke apk
 
+Sumber dokumentasi lain : https://www.petanikode.com/cordova/
+Membuat proyek dengan cordova, kemudian merubah file yang ada di cordova terutama www
+untuk diganti dengan file umroh apps ini
+Catatan : harus menginstall nodeJS, Java, JDK, SDK, npm cordova
+
 Mengganti title apk:
 -
 Mengganti icon apk:
