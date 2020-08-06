@@ -77,7 +77,7 @@ function clickAnswer(chosenElement, state) {
   //jika memilik jawaban yang BENAR, maka akan mengatakan pada pengguna "CORRECT" daripada "WRONG"
   if (chosenAnswer == state.questions[state.currentQuestion].answerCorrect) {
     state.userScore += 1;
-    $('.response1').text('Mantul!');
+    $('.response1').text('Benar :)');
   } else {
     $('.response1').text('Salah :(');
 
