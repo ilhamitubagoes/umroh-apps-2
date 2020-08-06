@@ -70,9 +70,9 @@ function clickStart() {
 };
 
 function clickRestart() {
-  $('#tab1').on('click', 'button', function(event) {
-    $('.js-startPage').removeClass('hidden');
-    $('#question-container').addClass('hidden');
+  $('#question-container').on('click', 'button', function(event) {
+	  $('.js-startPage').removeClass('hidden');
+	  $('#question-container').addClass('hidden');
 	  $('#petunjuk').addClass('hidden');
   })
 };
@@ -120,7 +120,8 @@ function clickContinue(state) {
   // hide tombol continue dan result, dengan memberikan class hidden
   $('.js-continue').addClass('hidden');
   $('.result').addClass('hidden');
-  $('section').remove();
+//   $('section').remove();
+  $("section").hide("slow");
 
   //kuis berakhir dan menampilkan pesan serta membuang jumlah pertanyaan serta nilai dari halaman bawah
   if (state.currentQuestion > 9) {
@@ -129,7 +130,7 @@ function clickContinue(state) {
                         '<div class="end">Anda telah selesai!</div> <p class ="endScore">Skor anda ' + 
                           state.userScore + " dari " + state.currentQuestion + "<p>");
 //     $('#tab-1').append('<a class="balik button button-raised" onclick="clickStart();">Lagi?!</a>' + "</section> </div>");
-    $('#tab-1').append('<button class="button button-raised js-start hover" onclick="clickRestart();">Ulangi</button>' + "</section> </div>");
+    $('#tab-1').append('<button class="button button-raised js-start hover" onclick="clickRestart();">Tes ulang</button>' + "</section> </div>");
     $('.js-count').remove(); //hapus class js-count
     $('.js-score').remove(); //hapus class js-score
 
