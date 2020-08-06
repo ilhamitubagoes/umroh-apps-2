@@ -62,9 +62,18 @@ var state = {
 function clickStart() {
   $('.js-startPage').on('click', 'button', function(event) {
 
-    $('.js-startPage').remove();
+//     $('.js-startPage').remove();
+    $('.js-startPage').addClass('hidden');
     $('#question-container').removeClass('hidden');
     $('#petunjuk').removeClass('hidden');
+  })
+};
+
+function clickRestart() {
+  $('#tab1').on('click', 'button', function(event) {
+    $('.js-startPage').removeClass('hidden');
+    $('#question-container').addClass('hidden');
+	  $('#petunjuk').addClass('hidden');
   })
 };
 
@@ -119,7 +128,8 @@ function clickContinue(state) {
     $('#tab-1').append("<div class='row' id='question-container'> <section class = 'question-container col-8'>" + 
                         '<div class="end">Anda telah selesai!</div> <p class ="endScore">Skor anda ' + 
                           state.userScore + " dari " + state.currentQuestion + "<p>");
-    $('#tab-1').append('<a class="balik button button-raised" onclick="clickStart();">Lagi?!</a>' + "</section> </div>");
+//     $('#tab-1').append('<a class="balik button button-raised" onclick="clickStart();">Lagi?!</a>' + "</section> </div>");
+    $('#tab-1').append('<button class="button button-raised js-start hover" onclick="clickRestart();">Ulangi</button>' + "</section> </div>");
     $('.js-count').remove(); //hapus class js-count
     $('.js-score').remove(); //hapus class js-score
 
