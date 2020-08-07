@@ -121,7 +121,7 @@ function clickContinue(state) {
   $('.js-continue').addClass('hidden');
   $('.result').addClass('hidden');
 //   $('section').remove();
-  $("section").hide("slow");
+  $("section").hide("fast");
 
   //kuis berakhir dan menampilkan pesan serta membuang jumlah pertanyaan serta nilai dari halaman bawah
   if (state.currentQuestion > 9) {
